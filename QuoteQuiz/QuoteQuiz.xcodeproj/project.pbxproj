@@ -15,6 +15,7 @@
 		B6F4C8D522F0E90A00A0B1B8 /* QuoteQuizTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F4C8D422F0E90A00A0B1B8 /* QuoteQuizTests.swift */; };
 		B6F4C8E022F0E90A00A0B1B8 /* QuoteQuizUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F4C8DF22F0E90A00A0B1B8 /* QuoteQuizUITests.swift */; };
 		B6F4C8F022F0F1ED00A0B1B8 /* HttpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F4C8EF22F0F1ED00A0B1B8 /* HttpService.swift */; };
+		B6F4C8F322F1059300A0B1B8 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6F4C8F222F1059300A0B1B8 /* Alamofire.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		B6F4C8DF22F0E90A00A0B1B8 /* QuoteQuizUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteQuizUITests.swift; sourceTree = "<group>"; };
 		B6F4C8E122F0E90A00A0B1B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6F4C8EF22F0F1ED00A0B1B8 /* HttpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpService.swift; sourceTree = "<group>"; };
+		B6F4C8F222F1059300A0B1B8 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6F4C8F322F1059300A0B1B8 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +86,7 @@
 				B6F4C8D322F0E90A00A0B1B8 /* QuoteQuizTests */,
 				B6F4C8DE22F0E90A00A0B1B8 /* QuoteQuizUITests */,
 				B6F4C8BD22F0E90900A0B1B8 /* Products */,
+				B6F4C8F122F1059300A0B1B8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,6 +132,14 @@
 			path = QuoteQuizUITests;
 			sourceTree = "<group>";
 		};
+		B6F4C8F122F1059300A0B1B8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B6F4C8F222F1059300A0B1B8 /* Alamofire.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,6 +150,7 @@
 				B6F4C8B822F0E90900A0B1B8 /* Sources */,
 				B6F4C8B922F0E90900A0B1B8 /* Frameworks */,
 				B6F4C8BA22F0E90900A0B1B8 /* Resources */,
+				B6F4C8F422F1060700A0B1B8 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -253,6 +266,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B6F4C8F422F1060700A0B1B8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B6F4C8B822F0E90900A0B1B8 /* Sources */ = {
@@ -438,6 +472,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L3U2AM85NZ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = QuoteQuiz/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -456,6 +494,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L3U2AM85NZ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = QuoteQuiz/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
