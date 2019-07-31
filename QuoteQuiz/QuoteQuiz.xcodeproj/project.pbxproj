@@ -83,6 +83,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B652340222F209820047D18B /* QuizViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B65233FE22F1FD900047D18B /* QuizViewController.swift */,
+				B65233FF22F1FD900047D18B /* QuizViewController.xib */,
+			);
+			path = QuizViewController;
+			sourceTree = "<group>";
+		};
+		B652340322F209A10047D18B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B652340222F209820047D18B /* QuizViewController */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		B652340422F209C50047D18B /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				B6F4C8EF22F0F1ED00A0B1B8 /* HttpService.swift */,
+				B6F4C8F522F123CA00A0B1B8 /* ResponseModels.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		B652340522F20C810047D18B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B65233FC22F12C160047D18B /* UITextView+setQuoteText.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		B6F4C8B322F0E90900A0B1B8 = {
 			isa = PBXGroup;
 			children = (
@@ -111,11 +145,9 @@
 				B6F4C8C622F0E90A00A0B1B8 /* Assets.xcassets */,
 				B6F4C8C822F0E90A00A0B1B8 /* LaunchScreen.storyboard */,
 				B6F4C8CB22F0E90A00A0B1B8 /* Info.plist */,
-				B6F4C8EF22F0F1ED00A0B1B8 /* HttpService.swift */,
-				B6F4C8F522F123CA00A0B1B8 /* ResponseModels.swift */,
-				B65233FC22F12C160047D18B /* UITextView+setQuoteText.swift */,
-				B65233FE22F1FD900047D18B /* QuizViewController.swift */,
-				B65233FF22F1FD900047D18B /* QuizViewController.xib */,
+				B652340322F209A10047D18B /* ViewControllers */,
+				B652340422F209C50047D18B /* Network */,
+				B652340522F20C810047D18B /* Extensions */,
 			);
 			path = QuoteQuiz;
 			sourceTree = "<group>";
