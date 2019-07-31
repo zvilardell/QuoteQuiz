@@ -15,13 +15,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        showFirstScreen()
+        return true
+    }
+    
+    private func showFirstScreen() {
         let quizViewController = QuizViewController()
         let navigationController = UINavigationController(rootViewController: quizViewController)
         navigationController.navigationBar.barStyle = .black
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
-        return true
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

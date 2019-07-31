@@ -12,7 +12,10 @@ class QuizViewController: UIViewController {
     
     @IBOutlet weak var quoteTextView: UITextView!
     
-    init() {
+    private let quoteGenerator: RandomQuoteGenerator
+    
+    init(quoteGenerator: RandomQuoteGenerator = RandomQuoteGenerator()) {
+        self.quoteGenerator = quoteGenerator
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -22,6 +25,10 @@ class QuizViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
+    }
+    
+    private func setupView() {
         quoteTextView.textContainerInset = .zero
         quoteTextView.contentInset = .zero
         quoteTextView.text = ""
@@ -31,7 +38,7 @@ class QuizViewController: UIViewController {
     }
     
     @objc func getQuote() {
-        HttpService.shared.getRonSwansonQuote() { [weak self] quote in
+        quoteGenerator.generateQuote { [weak self] quote, source in
             DispatchQueue.main.async {
                 self?.quoteTextView.setQuoteText(quote)
             }

@@ -10,6 +10,7 @@
 		B65233FD22F12C160047D18B /* UITextView+setQuoteText.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65233FC22F12C160047D18B /* UITextView+setQuoteText.swift */; };
 		B652340022F1FD900047D18B /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65233FE22F1FD900047D18B /* QuizViewController.swift */; };
 		B652340122F1FD900047D18B /* QuizViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B65233FF22F1FD900047D18B /* QuizViewController.xib */; };
+		B652340722F2138D0047D18B /* RandomQuoteGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B652340622F2138D0047D18B /* RandomQuoteGenerator.swift */; };
 		B6F4C8C022F0E90900A0B1B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F4C8BF22F0E90900A0B1B8 /* AppDelegate.swift */; };
 		B6F4C8C722F0E90A00A0B1B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6F4C8C622F0E90A00A0B1B8 /* Assets.xcassets */; };
 		B6F4C8CA22F0E90A00A0B1B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6F4C8C822F0E90A00A0B1B8 /* LaunchScreen.storyboard */; };
@@ -41,6 +42,7 @@
 		B65233FC22F12C160047D18B /* UITextView+setQuoteText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+setQuoteText.swift"; sourceTree = "<group>"; };
 		B65233FE22F1FD900047D18B /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		B65233FF22F1FD900047D18B /* QuizViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuizViewController.xib; sourceTree = "<group>"; };
+		B652340622F2138D0047D18B /* RandomQuoteGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomQuoteGenerator.swift; sourceTree = "<group>"; };
 		B6F4C8BC22F0E90900A0B1B8 /* QuoteQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuoteQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6F4C8BF22F0E90900A0B1B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6F4C8C622F0E90A00A0B1B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				B652340322F209A10047D18B /* ViewControllers */,
 				B652340422F209C50047D18B /* Network */,
 				B652340522F20C810047D18B /* Extensions */,
+				B652340622F2138D0047D18B /* RandomQuoteGenerator.swift */,
 			);
 			path = QuoteQuiz;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B65233FD22F12C160047D18B /* UITextView+setQuoteText.swift in Sources */,
+				B652340722F2138D0047D18B /* RandomQuoteGenerator.swift in Sources */,
 				B652340022F1FD900047D18B /* QuizViewController.swift in Sources */,
 				B6F4C8C022F0E90900A0B1B8 /* AppDelegate.swift in Sources */,
 				B6F4C8F622F123CA00A0B1B8 /* ResponseModels.swift in Sources */,

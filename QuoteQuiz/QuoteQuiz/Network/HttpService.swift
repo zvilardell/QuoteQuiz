@@ -18,24 +18,24 @@ class HttpService {
     static let shared = HttpService()
     private init() {}
     
-    func getKanyeQuote(completion: @escaping (String)->()) {
+    func getKanyeQuote(completion: @escaping (String, QuoteSource)->()) {
         get(kanyeEndpoint) { data in
             guard let kanyeResponse = try? JSONDecoder().decode(KanyeResponse.self, from: data) else { return }
-            completion(kanyeResponse.quote)
+            completion(kanyeResponse.quote, .kanyeWest)
         }
     }
     
-    func getBreakingBadQuote(completion: @escaping (String)->()) {
+    func getBreakingBadQuote(completion: @escaping (String, QuoteSource)->()) {
         get(breakingBadEndpoint) { data in
             guard let arrayResponse = try? JSONDecoder().decode(Array<BreakingBadResponse>.self, from: data), let bbResponse = arrayResponse.first else { return }
-            completion(bbResponse.quote)
+            completion(bbResponse.quote, .breakingBad)
         }
     }
     
-    func getRonSwansonQuote(completion: @escaping (String)->()) {
+    func getRonSwansonQuote(completion: @escaping (String, QuoteSource)->()) {
         get(ronSwansonEndpoint) { data in
             guard let arrayResponse = try? JSONDecoder().decode(Array<String>.self, from: data), let ronQuote = arrayResponse.first else { return }
-            completion(ronQuote)
+            completion(ronQuote, .ronSwanson)
         }
     }
     
