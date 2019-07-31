@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class QuizViewController: UIViewController {
     
     @IBOutlet weak var quoteTextView: UITextView!
     
@@ -25,9 +25,8 @@ class ViewController: UIViewController {
     @objc func getQuote() {
         HttpService.shared.getRonSwansonQuote() { [weak self] quote in
             DispatchQueue.main.async {
-                self?.quoteTextView.text = "\"\(quote)\""
+                self?.quoteTextView.setQuoteText(quote)
             }
         }
     }
 }
-
