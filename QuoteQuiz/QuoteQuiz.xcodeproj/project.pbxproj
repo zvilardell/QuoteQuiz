@@ -16,6 +16,7 @@
 		B6F4C8E022F0E90A00A0B1B8 /* QuoteQuizUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F4C8DF22F0E90A00A0B1B8 /* QuoteQuizUITests.swift */; };
 		B6F4C8F022F0F1ED00A0B1B8 /* HttpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F4C8EF22F0F1ED00A0B1B8 /* HttpService.swift */; };
 		B6F4C8F322F1059300A0B1B8 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6F4C8F222F1059300A0B1B8 /* Alamofire.framework */; };
+		B6F4C8F622F123CA00A0B1B8 /* ResponseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F4C8F522F123CA00A0B1B8 /* ResponseModels.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		B6F4C8E122F0E90A00A0B1B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6F4C8EF22F0F1ED00A0B1B8 /* HttpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpService.swift; sourceTree = "<group>"; };
 		B6F4C8F222F1059300A0B1B8 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		B6F4C8F522F123CA00A0B1B8 /* ResponseModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModels.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				B6F4C8C822F0E90A00A0B1B8 /* LaunchScreen.storyboard */,
 				B6F4C8CB22F0E90A00A0B1B8 /* Info.plist */,
 				B6F4C8EF22F0F1ED00A0B1B8 /* HttpService.swift */,
+				B6F4C8F522F123CA00A0B1B8 /* ResponseModels.swift */,
 			);
 			path = QuoteQuiz;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 			files = (
 				B6F4C8C222F0E90900A0B1B8 /* ViewController.swift in Sources */,
 				B6F4C8C022F0E90900A0B1B8 /* AppDelegate.swift in Sources */,
+				B6F4C8F622F123CA00A0B1B8 /* ResponseModels.swift in Sources */,
 				B6F4C8F022F0F1ED00A0B1B8 /* HttpService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

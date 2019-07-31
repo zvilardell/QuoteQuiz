@@ -9,14 +9,25 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    @IBOutlet weak var quoteTextField: UITextField!
+    
+    @IBOutlet weak var quoteTextView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        quoteTextView.textContainerInset = .zero
+        quoteTextView.contentInset = .zero
+        quoteTextView.text = ""
+        getQuote()
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(getQuote))
+        view.addGestureRecognizer(tapGestureRecognizer)
     }
 
-
+    @objc func getQuote() {
+        HttpService.shared.getRonSwansonQuote() { [weak self] quote in
+            DispatchQueue.main.async {
+                self?.quoteTextView.text = "\"\(quote)\""
+            }
+        }
+    }
 }
 
