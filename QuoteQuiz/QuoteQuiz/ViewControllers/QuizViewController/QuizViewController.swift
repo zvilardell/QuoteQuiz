@@ -29,6 +29,7 @@ class QuizViewController: UIViewController {
     }
     
     private func setupView() {
+        title = "QuoteQuiz"
         quoteTextView.textContainerInset = .zero
         quoteTextView.contentInset = .zero
         quoteTextView.text = ""
