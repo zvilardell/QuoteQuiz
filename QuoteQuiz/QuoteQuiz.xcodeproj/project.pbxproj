@@ -17,7 +17,6 @@
 		B6F4C8D522F0E90A00A0B1B8 /* QuoteQuizTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F4C8D422F0E90A00A0B1B8 /* QuoteQuizTests.swift */; };
 		B6F4C8E022F0E90A00A0B1B8 /* QuoteQuizUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F4C8DF22F0E90A00A0B1B8 /* QuoteQuizUITests.swift */; };
 		B6F4C8F022F0F1ED00A0B1B8 /* HttpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F4C8EF22F0F1ED00A0B1B8 /* HttpService.swift */; };
-		B6F4C8F322F1059300A0B1B8 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6F4C8F222F1059300A0B1B8 /* Alamofire.framework */; };
 		B6F4C8F622F123CA00A0B1B8 /* ResponseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F4C8F522F123CA00A0B1B8 /* ResponseModels.swift */; };
 /* End PBXBuildFile section */
 
@@ -64,7 +63,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B6F4C8F322F1059300A0B1B8 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
