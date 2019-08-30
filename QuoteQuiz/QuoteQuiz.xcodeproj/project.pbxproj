@@ -14,6 +14,7 @@
 		B6D615772319CF9800813038 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6F4C8F222F1059300A0B1B8 /* Alamofire.framework */; };
 		B6D615792319CF9B00813038 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6D615782319CF9B00813038 /* Realm.framework */; };
 		B6D6157B2319CF9E00813038 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6D6157A2319CF9E00813038 /* RealmSwift.framework */; };
+		B6D6157D2319D1DB00813038 /* UIViewController+utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D6157C2319D1DB00813038 /* UIViewController+utilities.swift */; };
 		B6F4C8C022F0E90900A0B1B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F4C8BF22F0E90900A0B1B8 /* AppDelegate.swift */; };
 		B6F4C8C722F0E90A00A0B1B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6F4C8C622F0E90A00A0B1B8 /* Assets.xcassets */; };
 		B6F4C8CA22F0E90A00A0B1B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6F4C8C822F0E90A00A0B1B8 /* LaunchScreen.storyboard */; };
@@ -47,6 +48,7 @@
 		B652340622F2138D0047D18B /* RandomQuoteGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomQuoteGenerator.swift; sourceTree = "<group>"; };
 		B6D615782319CF9B00813038 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		B6D6157A2319CF9E00813038 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		B6D6157C2319D1DB00813038 /* UIViewController+utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+utilities.swift"; sourceTree = "<group>"; };
 		B6F4C8BC22F0E90900A0B1B8 /* QuoteQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuoteQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6F4C8BF22F0E90900A0B1B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6F4C8C622F0E90A00A0B1B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				B65233FC22F12C160047D18B /* UITextView+setQuoteText.swift */,
+				B6D6157C2319D1DB00813038 /* UIViewController+utilities.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -348,6 +351,7 @@
 				B652340722F2138D0047D18B /* RandomQuoteGenerator.swift in Sources */,
 				B652340022F1FD900047D18B /* QuizViewController.swift in Sources */,
 				B6F4C8C022F0E90900A0B1B8 /* AppDelegate.swift in Sources */,
+				B6D6157D2319D1DB00813038 /* UIViewController+utilities.swift in Sources */,
 				B6F4C8F622F123CA00A0B1B8 /* ResponseModels.swift in Sources */,
 				B6F4C8F022F0F1ED00A0B1B8 /* HttpService.swift in Sources */,
 			);
