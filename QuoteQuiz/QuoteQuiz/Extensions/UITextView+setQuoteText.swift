@@ -9,7 +9,9 @@
 import UIKit
 
 extension UITextView {
-    func setQuoteText(_ text: String) {
+    func setQuoteText(_ text: String, heightToAdjust heightConstraint: NSLayoutConstraint) {
         self.text = "\"\(text)\""
+        let newSize = sizeThatFits(CGSize(width: frame.size.width, height: CGFloat.greatestFiniteMagnitude))
+        heightConstraint.constant = newSize.height
     }
 }

@@ -8,14 +8,16 @@
 
 import UIKit
 
-protocol GameButtonsDelegate {
+protocol GameButtonsDelegate: class {
     func answerSelected(withSource source: QuoteSource)
 }
 
 class QuizViewController: UIViewController {
     
     @IBOutlet weak var quoteTextView: UITextView!
+    @IBOutlet weak var quoteTextViewHeightContraint: NSLayoutConstraint!
     @IBOutlet weak var gameButtonsView: UIView!
+    @IBOutlet weak var quoteSourceLabel: UILabel!
     
     private let quoteGenerator: RandomQuoteGenerator
     private var currentQuote: Quote?
@@ -32,28 +34,35 @@ class QuizViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        getQuote()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         //add game buttons as a child view controller
-        addChildViewController(GameButtonsViewController(delegate: self), withFrame: gameButtonsView.frame)
+        let gameButtonsViewController = GameButtonsViewController(quote: currentQuote, delegate: self)
+        let controlsNavigationController = UINavigationController(rootViewController: gameButtonsViewController)
+        controlsNavigationController.navigationBar.isHidden = true
+        addChildViewController(controlsNavigationController, withFrame: gameButtonsView.frame)
     }
     
     private func setupView() {
         title = "QuoteQuiz"
         quoteTextView.textContainerInset = .zero
         quoteTextView.contentInset = .zero
+        quoteTextView.isScrollEnabled = false
+        quoteTextView.isSelectable = false
+        quoteTextView.isEditable = false
         quoteTextView.text = ""
-        getQuote()
     }
     
-    @objc func getQuote() {
-        quoteGenerator.generateQuote { [weak self] quote in
+    private func getQuote() {
+        quoteSourceLabel.isHidden = true
+        quoteGenerator.generateQuote { [unowned self] quote in
             DispatchQueue.main.async {
-                self?.currentQuote = quote
-                self?.quoteTextView.setQuoteText(quote.text)
+                self.currentQuote = quote
+                self.quoteTextView.setQuoteText(quote.text, heightToAdjust: self.quoteTextViewHeightContraint)
             }
         }
     }
@@ -63,9 +72,28 @@ extension QuizViewController: GameButtonsDelegate {
     func answerSelected(withSource source: QuoteSource) {
         guard let currentQuote = self.currentQuote, let currentSource = currentQuote.source else { return }
         if currentSource == source {
-            getQuote()
+            revealAnswer(quote: currentQuote, source: currentSource)
         } else {
             
         }
+    }
+    
+    private func revealAnswer(quote: Quote, source: QuoteSource) {
+        var quoteSourceText = "- "
+        
+        switch source {
+        case .breakingBad:
+            quoteSourceText += "Breaking Bad"
+            if let author = quote.author {
+                quoteSourceText += "\n  (\(author))"
+            }
+        case .ronSwanson:
+            quoteSourceText += "Ron Swanson"
+        case .kanyeWest:
+            quoteSourceText += "Kanye West"
+        }
+        
+        quoteSourceLabel.text = quoteSourceText
+        quoteSourceLabel.isHidden = false
     }
 }

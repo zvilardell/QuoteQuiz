@@ -10,9 +10,11 @@ import UIKit
 
 class GameButtonsViewController: UIViewController {
     
-    private let delegate: GameButtonsDelegate
+    private weak var delegate: GameButtonsDelegate?
+    private let quote: Quote?
     
-    init(delegate: GameButtonsDelegate) {
+    init(quote: Quote?, delegate: GameButtonsDelegate) {
+        self.quote = quote
         self.delegate = delegate
         super.init(nibName: "GameButtonsViewController", bundle: nil)
     }
@@ -24,20 +26,10 @@ class GameButtonsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-}
-
-//MARK: - Button Actions
-extension GameButtonsViewController {
     
-    @IBAction func breakingBadButtonTapped(_ sender: Any) {
-        delegate.answerSelected(withSource: .breakingBad)
-    }
-    
-    @IBAction func ronSwansonButtonTapped(_ sender: Any) {
-        delegate.answerSelected(withSource: .ronSwanson)
-    }
-    
-    @IBAction func kanyeWestButtonTapped(_ sender: Any) {
-        delegate.answerSelected(withSource: .kanyeWest)
+    @IBAction func buttonTapped(_ sender: UIButton) {
+        guard let quoteSource = QuoteSource(rawValue: sender.tag) else { return }
+        delegate?.answerSelected(withSource: quoteSource)
+        navigationController?.pushViewController(ResultsViewController(), animated: true)
     }
 }

@@ -20,8 +20,8 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="VNT-G9-JU2">
-                    <rect key="frame" x="0.0" y="353" width="414" height="200"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="VNT-G9-JU2">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bFX-p9-Ar3">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="55"/>
@@ -33,11 +33,11 @@
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <connections>
-                                <action selector="breakingBadButtonTapped:" destination="-1" eventType="touchUpInside" id="Njb-f6-PeO"/>
+                                <action selector="buttonTapped:" destination="-1" eventType="touchUpInside" id="X8w-E1-QQO"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eUZ-8U-BR8">
-                            <rect key="frame" x="0.0" y="72.5" width="414" height="55"/>
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eUZ-8U-BR8">
+                            <rect key="frame" x="0.0" y="381.5" width="414" height="55"/>
                             <color key="backgroundColor" red="0.66666668653488159" green="0.33630002433448397" blue="0.14933282920193658" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="55" id="WNA-ER-D06"/>
@@ -46,11 +46,11 @@
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <connections>
-                                <action selector="ronSwansonButtonTapped:" destination="-1" eventType="touchUpInside" id="Ab4-UL-GJ5"/>
+                                <action selector="buttonTapped:" destination="-1" eventType="touchUpInside" id="Khr-M0-g0B"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SbF-uC-DwB">
-                            <rect key="frame" x="0.0" y="145" width="414" height="55"/>
+                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SbF-uC-DwB">
+                            <rect key="frame" x="0.0" y="763" width="414" height="55"/>
                             <color key="backgroundColor" red="0.66666668653488159" green="0.33630002433448397" blue="0.14933282920193658" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="55" id="HdR-Ir-47u"/>
@@ -59,12 +59,11 @@
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <connections>
-                                <action selector="kanyeWestButtonTapped:" destination="-1" eventType="touchUpInside" id="wh8-n6-Tdn"/>
+                                <action selector="buttonTapped:" destination="-1" eventType="touchUpInside" id="2ja-e0-2qh"/>
                             </connections>
                         </button>
                     </subviews>
                     <constraints>
-                        <constraint firstAttribute="height" constant="200" id="Kem-ey-imG"/>
                         <constraint firstItem="eUZ-8U-BR8" firstAttribute="leading" secondItem="VNT-G9-JU2" secondAttribute="leading" id="WMj-Jt-N8n"/>
                         <constraint firstAttribute="trailing" secondItem="bFX-p9-Ar3" secondAttribute="trailing" id="b7X-nc-E49"/>
                         <constraint firstItem="SbF-uC-DwB" firstAttribute="leading" secondItem="VNT-G9-JU2" secondAttribute="leading" id="bnA-LH-u3y"/>
@@ -79,6 +78,7 @@
                 <constraint firstItem="VNT-G9-JU2" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" id="7Y2-tk-kma"/>
                 <constraint firstItem="VNT-G9-JU2" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="CXQ-yS-XW2"/>
                 <constraint firstItem="VNT-G9-JU2" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="QTn-Tw-YDY"/>
+                <constraint firstItem="VNT-G9-JU2" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" id="uHw-d3-caP"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>
