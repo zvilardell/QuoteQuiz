@@ -8,11 +8,17 @@
 
 import UIKit
 
+protocol GameButtonsDelegate {
+    func answerSelected(withSource source: QuoteSource)
+}
+
 class QuizViewController: UIViewController {
     
     @IBOutlet weak var quoteTextView: UITextView!
+    @IBOutlet weak var gameButtonsView: UIView!
     
     private let quoteGenerator: RandomQuoteGenerator
+    private var currentQuote: Quote?
     
     init(quoteGenerator: RandomQuoteGenerator = RandomQuoteGenerator()) {
         self.quoteGenerator = quoteGenerator
@@ -28,21 +34,38 @@ class QuizViewController: UIViewController {
         setupView()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        //add game buttons as a child view controller
+        addChildViewController(GameButtonsViewController(delegate: self), withFrame: gameButtonsView.frame)
+    }
+    
     private func setupView() {
         title = "QuoteQuiz"
         quoteTextView.textContainerInset = .zero
         quoteTextView.contentInset = .zero
         quoteTextView.text = ""
         getQuote()
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(getQuote))
-        view.addGestureRecognizer(tapGestureRecognizer)
     }
     
     @objc func getQuote() {
-        quoteGenerator.generateQuote { [weak self] quote, source in
+        quoteGenerator.generateQuote { [weak self] quote in
             DispatchQueue.main.async {
-                self?.quoteTextView.setQuoteText(quote)
+                self?.currentQuote = quote
+                self?.quoteTextView.setQuoteText(quote.text)
             }
+        }
+    }
+}
+
+extension QuizViewController: GameButtonsDelegate {
+    func answerSelected(withSource source: QuoteSource) {
+        guard let currentQuote = self.currentQuote, let currentSource = currentQuote.source else { return }
+        if currentSource == source {
+            getQuote()
+        } else {
+            
         }
     }
 }

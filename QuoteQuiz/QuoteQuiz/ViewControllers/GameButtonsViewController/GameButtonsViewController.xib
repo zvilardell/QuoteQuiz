@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GameButtonsViewController" customModule="QuoteQuiz" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="VNT-G9-JU2">
+                    <rect key="frame" x="0.0" y="353" width="414" height="200"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bFX-p9-Ar3">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="55"/>
+                            <color key="backgroundColor" red="0.66666668653488159" green="0.33630002433448397" blue="0.14933282920193658" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="55" id="MVW-Pg-V8Q"/>
+                            </constraints>
+                            <state key="normal" title="Breaking Bad">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="breakingBadButtonTapped:" destination="-1" eventType="touchUpInside" id="Njb-f6-PeO"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eUZ-8U-BR8">
+                            <rect key="frame" x="0.0" y="72.5" width="414" height="55"/>
+                            <color key="backgroundColor" red="0.66666668653488159" green="0.33630002433448397" blue="0.14933282920193658" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="55" id="WNA-ER-D06"/>
+                            </constraints>
+                            <state key="normal" title="Ron Swanson">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="ronSwansonButtonTapped:" destination="-1" eventType="touchUpInside" id="Ab4-UL-GJ5"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SbF-uC-DwB">
+                            <rect key="frame" x="0.0" y="145" width="414" height="55"/>
+                            <color key="backgroundColor" red="0.66666668653488159" green="0.33630002433448397" blue="0.14933282920193658" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="55" id="HdR-Ir-47u"/>
+                            </constraints>
+                            <state key="normal" title="Kanye West">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="kanyeWestButtonTapped:" destination="-1" eventType="touchUpInside" id="wh8-n6-Tdn"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="200" id="Kem-ey-imG"/>
+                        <constraint firstItem="eUZ-8U-BR8" firstAttribute="leading" secondItem="VNT-G9-JU2" secondAttribute="leading" id="WMj-Jt-N8n"/>
+                        <constraint firstAttribute="trailing" secondItem="bFX-p9-Ar3" secondAttribute="trailing" id="b7X-nc-E49"/>
+                        <constraint firstItem="SbF-uC-DwB" firstAttribute="leading" secondItem="VNT-G9-JU2" secondAttribute="leading" id="bnA-LH-u3y"/>
+                        <constraint firstAttribute="trailing" secondItem="eUZ-8U-BR8" secondAttribute="trailing" id="jbx-J1-Pgj"/>
+                        <constraint firstItem="bFX-p9-Ar3" firstAttribute="leading" secondItem="VNT-G9-JU2" secondAttribute="leading" id="lk0-4Z-0u5"/>
+                        <constraint firstAttribute="trailing" secondItem="SbF-uC-DwB" secondAttribute="trailing" id="seW-Vg-yYy"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="VNT-G9-JU2" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" id="7Y2-tk-kma"/>
+                <constraint firstItem="VNT-G9-JU2" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="CXQ-yS-XW2"/>
+                <constraint firstItem="VNT-G9-JU2" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="QTn-Tw-YDY"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+        </view>
+    </objects>
+</document>

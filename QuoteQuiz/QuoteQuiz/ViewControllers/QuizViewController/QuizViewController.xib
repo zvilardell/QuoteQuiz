@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QuizViewController" customModule="QuoteQuiz" customModuleProvider="target">
             <connections>
+                <outlet property="gameButtonsView" destination="zx7-wY-hlC" id="IGI-w9-qp4"/>
                 <outlet property="quoteTextView" destination="zhi-ri-40v" id="cVF-Wn-QLw"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -31,14 +32,25 @@
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zx7-wY-hlC">
+                    <rect key="frame" x="52.5" y="539" width="309" height="300"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="300" id="N3w-wi-dLQ"/>
+                        <constraint firstAttribute="width" secondItem="zx7-wY-hlC" secondAttribute="height" multiplier="240:233" id="sGa-eR-r6a"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="zhi-ri-40v" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="NWE-6l-hCg"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="zx7-wY-hlC" secondAttribute="bottom" constant="23" id="Va1-I6-4Na"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zhi-ri-40v" secondAttribute="trailing" constant="8" id="WCu-a0-jgQ"/>
+                <constraint firstItem="zx7-wY-hlC" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Xec-3a-6sU"/>
                 <constraint firstItem="zhi-ri-40v" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="150" id="ahq-PG-REc"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="131.8840579710145" y="153.34821428571428"/>
         </view>
     </objects>
 </document>

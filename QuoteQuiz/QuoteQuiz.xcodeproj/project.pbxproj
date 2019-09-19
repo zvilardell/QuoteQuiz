@@ -11,6 +11,9 @@
 		B652340022F1FD900047D18B /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65233FE22F1FD900047D18B /* QuizViewController.swift */; };
 		B652340122F1FD900047D18B /* QuizViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B65233FF22F1FD900047D18B /* QuizViewController.xib */; };
 		B652340722F2138D0047D18B /* RandomQuoteGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B652340622F2138D0047D18B /* RandomQuoteGenerator.swift */; };
+		B696A1372332FBE500F2DE24 /* GameButtonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B696A1352332FBE500F2DE24 /* GameButtonsViewController.swift */; };
+		B696A1382332FBE500F2DE24 /* GameButtonsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B696A1362332FBE500F2DE24 /* GameButtonsViewController.xib */; };
+		B696A13B2333033D00F2DE24 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = B696A13A2333033D00F2DE24 /* Quote.swift */; };
 		B6D615772319CF9800813038 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6F4C8F222F1059300A0B1B8 /* Alamofire.framework */; };
 		B6D615792319CF9B00813038 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6D615782319CF9B00813038 /* Realm.framework */; };
 		B6D6157B2319CF9E00813038 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6D6157A2319CF9E00813038 /* RealmSwift.framework */; };
@@ -46,6 +49,9 @@
 		B65233FE22F1FD900047D18B /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		B65233FF22F1FD900047D18B /* QuizViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuizViewController.xib; sourceTree = "<group>"; };
 		B652340622F2138D0047D18B /* RandomQuoteGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomQuoteGenerator.swift; sourceTree = "<group>"; };
+		B696A1352332FBE500F2DE24 /* GameButtonsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameButtonsViewController.swift; sourceTree = "<group>"; };
+		B696A1362332FBE500F2DE24 /* GameButtonsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameButtonsViewController.xib; sourceTree = "<group>"; };
+		B696A13A2333033D00F2DE24 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		B6D615782319CF9B00813038 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		B6D6157A2319CF9E00813038 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		B6D6157C2319D1DB00813038 /* UIViewController+utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+utilities.swift"; sourceTree = "<group>"; };
@@ -106,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				B652340222F209820047D18B /* QuizViewController */,
+				B696A1392332FBEC00F2DE24 /* GameButtonsViewController */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -126,6 +133,31 @@
 				B6D6157C2319D1DB00813038 /* UIViewController+utilities.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B696A1392332FBEC00F2DE24 /* GameButtonsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B696A1352332FBE500F2DE24 /* GameButtonsViewController.swift */,
+				B696A1362332FBE500F2DE24 /* GameButtonsViewController.xib */,
+			);
+			path = GameButtonsViewController;
+			sourceTree = "<group>";
+		};
+		B696A13C2333099900F2DE24 /* RealmModels */ = {
+			isa = PBXGroup;
+			children = (
+				B696A13A2333033D00F2DE24 /* Quote.swift */,
+			);
+			path = RealmModels;
+			sourceTree = "<group>";
+		};
+		B696A13D233309B000F2DE24 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				B652340622F2138D0047D18B /* RandomQuoteGenerator.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		B6F4C8B322F0E90900A0B1B8 = {
@@ -159,7 +191,8 @@
 				B652340322F209A10047D18B /* ViewControllers */,
 				B652340422F209C50047D18B /* Network */,
 				B652340522F20C810047D18B /* Extensions */,
-				B652340622F2138D0047D18B /* RandomQuoteGenerator.swift */,
+				B696A13D233309B000F2DE24 /* Utilities */,
+				B696A13C2333099900F2DE24 /* RealmModels */,
 			);
 			path = QuoteQuiz;
 			sourceTree = "<group>";
@@ -299,6 +332,7 @@
 			files = (
 				B6F4C8CA22F0E90A00A0B1B8 /* LaunchScreen.storyboard in Resources */,
 				B6F4C8C722F0E90A00A0B1B8 /* Assets.xcassets in Resources */,
+				B696A1382332FBE500F2DE24 /* GameButtonsViewController.xib in Resources */,
 				B652340122F1FD900047D18B /* QuizViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -349,7 +383,9 @@
 			files = (
 				B65233FD22F12C160047D18B /* UITextView+setQuoteText.swift in Sources */,
 				B652340722F2138D0047D18B /* RandomQuoteGenerator.swift in Sources */,
+				B696A1372332FBE500F2DE24 /* GameButtonsViewController.swift in Sources */,
 				B652340022F1FD900047D18B /* QuizViewController.swift in Sources */,
+				B696A13B2333033D00F2DE24 /* Quote.swift in Sources */,
 				B6F4C8C022F0E90900A0B1B8 /* AppDelegate.swift in Sources */,
 				B6D6157D2319D1DB00813038 /* UIViewController+utilities.swift in Sources */,
 				B6F4C8F622F123CA00A0B1B8 /* ResponseModels.swift in Sources */,
