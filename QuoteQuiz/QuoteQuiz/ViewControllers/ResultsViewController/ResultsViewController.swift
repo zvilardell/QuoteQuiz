@@ -10,21 +10,46 @@ import UIKit
 
 class ResultsViewController: UIViewController {
 
+    @IBOutlet weak var answerResultsLabel: UILabel!
+    
+    private weak var delegate: GameButtonsDelegate?
+    private let quote: Quote?
+    private let selectedSource: QuoteSource
+    
+    init(quote: Quote?, selectedSource: QuoteSource, delegate: GameButtonsDelegate?) {
+        self.quote = quote
+        self.selectedSource = selectedSource
+        self.delegate = delegate
+        super.init(nibName: "ResultsViewController", bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        showResults()
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    private func showResults() {
+        guard let quote = quote, let quoteSource = quote.source else { return }
+        if quote.source == selectedSource {
+            answerResultsLabel.text = "Correct!"
+            answerResultsLabel.textColor = .green
+        } else {
+            answerResultsLabel.text = "Incorrect."
+            answerResultsLabel.textColor = .red
+        }
     }
-    */
-
+    
+    @IBAction func favoriteButtonTapped(_ sender: Any) {
+        print("Favorite tapped")
+    }
+    
+    @IBAction func nextButtonTapped(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+        delegate?.showNextQuote()
+    }
+    
 }

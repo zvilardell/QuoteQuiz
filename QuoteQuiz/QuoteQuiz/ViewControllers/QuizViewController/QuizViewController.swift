@@ -10,6 +10,7 @@ import UIKit
 
 protocol GameButtonsDelegate: class {
     func answerSelected(withSource source: QuoteSource)
+    func showNextQuote()
 }
 
 class QuizViewController: UIViewController {
@@ -69,16 +70,9 @@ class QuizViewController: UIViewController {
 }
 
 extension QuizViewController: GameButtonsDelegate {
-    func answerSelected(withSource source: QuoteSource) {
-        guard let currentQuote = self.currentQuote, let currentSource = currentQuote.source else { return }
-        if currentSource == source {
-            revealAnswer(quote: currentQuote, source: currentSource)
-        } else {
-            
-        }
-    }
     
-    private func revealAnswer(quote: Quote, source: QuoteSource) {
+    func answerSelected(withSource source: QuoteSource) {
+        guard let quote = self.currentQuote, let source = quote.source else { return }
         var quoteSourceText = "- "
         
         switch source {
@@ -95,5 +89,9 @@ extension QuizViewController: GameButtonsDelegate {
         
         quoteSourceLabel.text = quoteSourceText
         quoteSourceLabel.isHidden = false
+    }
+    
+    func showNextQuote() {
+        getQuote()
     }
 }
