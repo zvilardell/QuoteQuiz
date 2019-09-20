@@ -22,6 +22,7 @@ class QuizViewController: UIViewController {
     
     private let quoteGenerator: RandomQuoteGenerator
     private var currentQuote: Quote?
+    private lazy var gameButtonsViewController: GameButtonsViewController = GameButtonsViewController(delegate: self)
     
     init(quoteGenerator: RandomQuoteGenerator = RandomQuoteGenerator()) {
         self.quoteGenerator = quoteGenerator
@@ -42,7 +43,6 @@ class QuizViewController: UIViewController {
         super.viewDidAppear(animated)
         
         //add game buttons as a child view controller
-        let gameButtonsViewController = GameButtonsViewController(quote: currentQuote, delegate: self)
         let controlsNavigationController = UINavigationController(rootViewController: gameButtonsViewController)
         controlsNavigationController.navigationBar.isHidden = true
         addChildViewController(controlsNavigationController, withFrame: gameButtonsView.frame)
@@ -56,13 +56,15 @@ class QuizViewController: UIViewController {
         quoteTextView.isSelectable = false
         quoteTextView.isEditable = false
         quoteTextView.text = ""
+        quoteSourceLabel.isHidden = true
     }
     
     private func getQuote() {
-        quoteSourceLabel.isHidden = true
         quoteGenerator.generateQuote { [unowned self] quote in
             DispatchQueue.main.async {
+                self.quoteSourceLabel.isHidden = true
                 self.currentQuote = quote
+                self.gameButtonsViewController.setQuote(quote)
                 self.quoteTextView.setQuoteText(quote.text, heightToAdjust: self.quoteTextViewHeightContraint)
             }
         }

@@ -23,22 +23,46 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f6x-1s-vex" customClass="UIControl">
                     <rect key="frame" x="0.0" y="655" width="207" height="207"/>
-                    <color key="backgroundColor" red="1" green="0.43638766740679391" blue="0.42292837452384613" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UnfavoritedHeart" translatesAutoresizingMaskIntoConstraints="NO" id="dlp-GY-vDb">
+                            <rect key="frame" x="63.5" y="63.5" width="80" height="80"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="80" id="O8u-eM-1Ec"/>
+                                <constraint firstAttribute="width" secondItem="dlp-GY-vDb" secondAttribute="height" multiplier="1:1" id="f61-5W-6sA"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="0.43529411764705883" blue="0.42352941176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
+                        <constraint firstItem="dlp-GY-vDb" firstAttribute="centerY" secondItem="f6x-1s-vex" secondAttribute="centerY" id="Kwj-Zl-q3V"/>
                         <constraint firstAttribute="width" secondItem="f6x-1s-vex" secondAttribute="height" multiplier="1:1" id="Rd7-eW-aNx"/>
+                        <constraint firstItem="dlp-GY-vDb" firstAttribute="centerX" secondItem="f6x-1s-vex" secondAttribute="centerX" id="pJ3-U4-UEM"/>
                     </constraints>
                     <connections>
-                        <action selector="favoriteButtonTapped:" destination="-1" eventType="touchUpInside" id="zws-ue-hIR"/>
+                        <action selector="favoriteButtonTapped:" destination="-1" eventType="touchUpInside" id="Jk7-Sp-2Rx"/>
                     </connections>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bym-SY-GUN" customClass="UIControl">
                     <rect key="frame" x="207" y="655" width="207" height="207"/>
-                    <color key="backgroundColor" red="0.68405810103001552" green="1" blue="0.61679966402850717" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NextArrow" translatesAutoresizingMaskIntoConstraints="NO" id="oCf-JY-bE5">
+                            <rect key="frame" x="63.5" y="63.5" width="80" height="80"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="oCf-JY-bE5" secondAttribute="height" multiplier="1:1" id="PpA-RD-EAb"/>
+                                <constraint firstAttribute="width" constant="80" id="rXL-xz-rw6"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" red="0.68235294117647061" green="1" blue="0.61568627450980395" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
+                        <constraint firstItem="oCf-JY-bE5" firstAttribute="centerX" secondItem="bym-SY-GUN" secondAttribute="centerX" id="GiB-a3-kwV"/>
+                        <constraint firstItem="oCf-JY-bE5" firstAttribute="centerY" secondItem="bym-SY-GUN" secondAttribute="centerY" id="dPN-SW-DTL"/>
                         <constraint firstAttribute="width" secondItem="bym-SY-GUN" secondAttribute="height" multiplier="1:1" id="sU4-dQ-XJO"/>
                     </constraints>
                     <connections>
-                        <action selector="nextButtonTapped:" destination="-1" eventType="valueChanged" id="xwR-Em-KDw"/>
+                        <action selector="nextButtonTapped:" destination="-1" eventType="touchUpInside" id="aWe-It-6iO"/>
                     </connections>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YjA-fb-oly">
@@ -63,4 +87,8 @@
             <point key="canvasLocation" x="131.8840579710145" y="153.34821428571428"/>
         </view>
     </objects>
+    <resources>
+        <image name="NextArrow" width="18" height="18"/>
+        <image name="UnfavoritedHeart" width="18" height="18"/>
+    </resources>
 </document>

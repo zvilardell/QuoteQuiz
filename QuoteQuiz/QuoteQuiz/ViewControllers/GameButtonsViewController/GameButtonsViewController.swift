@@ -11,10 +11,9 @@ import UIKit
 class GameButtonsViewController: UIViewController {
     
     private weak var delegate: GameButtonsDelegate?
-    private let quote: Quote?
+    private var quote: Quote?
     
-    init(quote: Quote?, delegate: GameButtonsDelegate?) {
-        self.quote = quote
+    init(delegate: GameButtonsDelegate?) {
         self.delegate = delegate
         super.init(nibName: "GameButtonsViewController", bundle: nil)
     }
@@ -27,9 +26,13 @@ class GameButtonsViewController: UIViewController {
         super.viewDidLoad()
     }
     
+    func setQuote(_ quote: Quote) {
+        self.quote = quote
+    }
+    
     @IBAction func buttonTapped(_ sender: UIButton) {
-        guard let quoteSource = QuoteSource(rawValue: sender.tag) else { return }
-        delegate?.answerSelected(withSource: quoteSource)
-        navigationController?.pushViewController(ResultsViewController(quote: quote, selectedSource: quoteSource, delegate: delegate), animated: true)
+        guard let quote = quote, let selectedSource = QuoteSource(rawValue: sender.tag) else { return }
+        delegate?.answerSelected(withSource: selectedSource)
+        navigationController?.pushViewController(ResultsViewController(quote: quote, selectedSource: selectedSource, delegate: delegate), animated: true)
     }
 }

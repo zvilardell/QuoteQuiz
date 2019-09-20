@@ -16,6 +16,7 @@
 		B696A13B2333033D00F2DE24 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = B696A13A2333033D00F2DE24 /* Quote.swift */; };
 		B696A140233413A900F2DE24 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B696A13E233413A900F2DE24 /* ResultsViewController.swift */; };
 		B696A141233413A900F2DE24 /* ResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B696A13F233413A900F2DE24 /* ResultsViewController.xib */; };
+		B696A1442334508700F2DE24 /* UINavigationController+popRightToLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = B696A1432334508700F2DE24 /* UINavigationController+popRightToLeft.swift */; };
 		B6D615772319CF9800813038 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6F4C8F222F1059300A0B1B8 /* Alamofire.framework */; };
 		B6D615792319CF9B00813038 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6D615782319CF9B00813038 /* Realm.framework */; };
 		B6D6157B2319CF9E00813038 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6D6157A2319CF9E00813038 /* RealmSwift.framework */; };
@@ -56,6 +57,7 @@
 		B696A13A2333033D00F2DE24 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		B696A13E233413A900F2DE24 /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		B696A13F233413A900F2DE24 /* ResultsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultsViewController.xib; sourceTree = "<group>"; };
+		B696A1432334508700F2DE24 /* UINavigationController+popRightToLeft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+popRightToLeft.swift"; sourceTree = "<group>"; };
 		B6D615782319CF9B00813038 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		B6D6157A2319CF9E00813038 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		B6D6157C2319D1DB00813038 /* UIViewController+utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+utilities.swift"; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 			children = (
 				B65233FC22F12C160047D18B /* UITextView+setQuoteText.swift */,
 				B6D6157C2319D1DB00813038 /* UIViewController+utilities.swift */,
+				B696A1432334508700F2DE24 /* UINavigationController+popRightToLeft.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -397,6 +400,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B65233FD22F12C160047D18B /* UITextView+setQuoteText.swift in Sources */,
+				B696A1442334508700F2DE24 /* UINavigationController+popRightToLeft.swift in Sources */,
 				B652340722F2138D0047D18B /* RandomQuoteGenerator.swift in Sources */,
 				B696A1372332FBE500F2DE24 /* GameButtonsViewController.swift in Sources */,
 				B696A140233413A900F2DE24 /* ResultsViewController.swift in Sources */,

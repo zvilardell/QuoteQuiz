@@ -34,7 +34,7 @@ class ResultsViewController: UIViewController {
     
     private func showResults() {
         guard let quote = quote, let quoteSource = quote.source else { return }
-        if quote.source == selectedSource {
+        if quoteSource == selectedSource {
             answerResultsLabel.text = "Correct!"
             answerResultsLabel.textColor = .green
         } else {
@@ -48,7 +48,7 @@ class ResultsViewController: UIViewController {
     }
     
     @IBAction func nextButtonTapped(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
+        navigationController?.popRightToLeft()
         delegate?.showNextQuote()
     }
     
