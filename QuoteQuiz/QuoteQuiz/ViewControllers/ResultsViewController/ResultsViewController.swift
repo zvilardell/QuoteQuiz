@@ -36,8 +36,12 @@ class ResultsViewController: UIViewController {
     }
     
     private func setupView() {
-        arrowImageView.tintColor = .white
-        heartImageView.tintColor = .white
+        guard let arrowImage = UIImage(named: "NextArrow"),
+              let heartImage = UIImage(named: "UnfavoritedHeart")
+              else { return }
+        
+        arrowImageView.setImage(arrowImage, withTintColor: .white)
+        heartImageView.setImage(heartImage, withTintColor: .white)
     }
     
     private func showResults() {
