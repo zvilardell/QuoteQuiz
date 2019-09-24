@@ -11,6 +11,8 @@ import UIKit
 class ResultsViewController: UIViewController {
 
     @IBOutlet weak var answerResultsLabel: UILabel!
+    @IBOutlet weak var heartImageView: UIImageView!
+    @IBOutlet weak var arrowImageView: UIImageView!
     
     private weak var delegate: GameButtonsDelegate?
     private let quote: Quote?
@@ -29,7 +31,13 @@ class ResultsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
         showResults()
+    }
+    
+    private func setupView() {
+        arrowImageView.tintColor = .white
+        heartImageView.tintColor = .white
     }
     
     private func showResults() {
@@ -48,7 +56,7 @@ class ResultsViewController: UIViewController {
     }
     
     @IBAction func nextButtonTapped(_ sender: Any) {
-        navigationController?.popRightToLeft()
+        navigationController?.popViewController(animated: true)//.popRightToLeft()
         delegate?.showNextQuote()
     }
     

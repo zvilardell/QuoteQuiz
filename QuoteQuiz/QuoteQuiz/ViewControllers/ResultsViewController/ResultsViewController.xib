@@ -13,6 +13,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ResultsViewController" customModule="QuoteQuiz" customModuleProvider="target">
             <connections>
                 <outlet property="answerResultsLabel" destination="YjA-fb-oly" id="5gx-Lo-Mub"/>
+                <outlet property="arrowImageView" destination="oCf-JY-bE5" id="MzK-WO-0rG"/>
+                <outlet property="heartImageView" destination="dlp-GY-vDb" id="dQ6-rm-Mq2"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
