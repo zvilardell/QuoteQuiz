@@ -25,10 +25,29 @@ class Quote: Object {
         return QuoteSource(rawValue: self.quoteSource)
     }
     
+    override class func primaryKey() -> String? {
+        return "text"
+    }
+    
     convenience init(text: String, author: String? = nil, quoteSource: QuoteSource) {
         self.init()
         self.text = text
         self.author = author
         self.quoteSource = quoteSource.rawValue
+    }
+}
+
+//MARK: - Realm Helper Methods
+extension Quote {
+    func existsInRealm() -> Bool {
+        guard let realm = try? Realm() else { return false }
+        return realm.object(ofType: Quote.self, forPrimaryKey: self.text) != nil
+    }
+    
+    func saveToRealm() {
+        guard let realm = try? Realm() else { return }
+        try? realm.write {
+            realm.add(self, update: .error)
+        }
     }
 }

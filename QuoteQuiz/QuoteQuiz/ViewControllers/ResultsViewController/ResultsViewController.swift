@@ -36,8 +36,9 @@ class ResultsViewController: UIViewController {
     }
     
     private func setupView() {
-        guard let arrowImage = UIImage(named: "NextArrow"),
-              let heartImage = UIImage(named: "UnfavoritedHeart")
+        guard let quote = self.quote,
+              let arrowImage = UIImage(named: "NextArrow"),
+              let heartImage = quote.existsInRealm() ? UIImage(named: "FavoritedHeart") : UIImage(named: "UnfavoritedHeart")
               else { return }
         
         arrowImageView.setImage(arrowImage, withTintColor: .white)
@@ -56,7 +57,16 @@ class ResultsViewController: UIViewController {
     }
     
     @IBAction func favoriteButtonTapped(_ sender: Any) {
-        print("Favorite tapped")
+        guard let quote = quote,
+              let newHeartImage = !quote.existsInRealm() ? UIImage(named: "FavoritedHeart") : UIImage(named: "UnfavoritedHeart")
+              else { return }
+        if !quote.existsInRealm() {
+            quote.saveToRealm()
+            heartImageView.setImage(newHeartImage, withTintColor: .white)
+        } else {
+            print("unfavorite quote")
+            heartImageView.setImage(newHeartImage, withTintColor: .white)
+        }
     }
     
     @IBAction func nextButtonTapped(_ sender: Any) {
