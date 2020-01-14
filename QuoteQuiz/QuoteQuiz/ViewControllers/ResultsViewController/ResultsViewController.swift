@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Realm
+import RealmSwift
 
 class ResultsViewController: UIViewController {
 
@@ -17,6 +19,10 @@ class ResultsViewController: UIViewController {
     private weak var delegate: GameButtonsDelegate?
     private let quote: Quote?
     private let selectedSource: QuoteSource
+    private var notificationToken: RLMNotificationToken?
+    
+    private let favoritedImage: UIImage? = UIImage(named: "FavoritedHeart")
+    private let notFavoritedImage: UIImage? = UIImage(named: "UnfavoritedHeart")
     
     init(quote: Quote?, selectedSource: QuoteSource, delegate: GameButtonsDelegate?) {
         self.quote = quote
@@ -37,12 +43,39 @@ class ResultsViewController: UIViewController {
     
     private func setupView() {
         guard let quote = self.quote,
-              let arrowImage = UIImage(named: "NextArrow"),
-              let heartImage = quote.existsInRealm() ? UIImage(named: "FavoritedHeart") : UIImage(named: "UnfavoritedHeart")
+              let arrowImage = UIImage(named: "NextArrow")
               else { return }
         
         arrowImageView.setImage(arrowImage, withTintColor: .white)
-        heartImageView.setImage(heartImage, withTintColor: .white)
+        observeQuote()
+    }
+    
+    private func observeQuote() {
+        guard let realm = try? Realm(),
+              let quote = self.quote else { return }
+        //cannot observe unmanaged single objects
+        //observe results collection instead, initially empty if quote has not been saved
+        let results = realm.objects(Quote.self).filter("text == %@", quote.text)
+        notificationToken = results.observe { [weak self] changes in
+            switch changes {
+            case .initial:
+                let saved = quote.existsInRealm()
+                guard let heartImage = saved ? self?.favoritedImage : self?.notFavoritedImage else { return }
+                self?.heartImageView.setImage(heartImage, withTintColor: .white)
+            case .update(_, let deletions, let insertions, let modifications):
+                if !deletions.isEmpty {
+                    //quote has been un-favorited
+                    guard let heartImage = self?.notFavoritedImage else { return }
+                    self?.heartImageView.setImage(heartImage, withTintColor: .white)
+                } else if !insertions.isEmpty {
+                    //quote has been favorited
+                    guard let heartImage = self?.favoritedImage else { return }
+                    self?.heartImageView.setImage(heartImage, withTintColor: .white)
+                }
+            case .error(let error):
+                fatalError("\(error)")
+            }
+        }
     }
     
     private func showResults() {
@@ -62,10 +95,8 @@ class ResultsViewController: UIViewController {
               else { return }
         if !quote.existsInRealm() {
             quote.saveToRealm()
-            heartImageView.setImage(newHeartImage, withTintColor: .white)
         } else {
-            print("unfavorite quote")
-            heartImageView.setImage(newHeartImage, withTintColor: .white)
+            //quote.removeFromRealm()
         }
     }
     

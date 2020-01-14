@@ -50,4 +50,11 @@ extension Quote {
             realm.add(self, update: .error)
         }
     }
+    
+    func removeFromRealm() {
+        guard let realm = try? Realm() else { return }
+        try? realm.write {
+            realm.delete(self)
+        }
+    }
 }
