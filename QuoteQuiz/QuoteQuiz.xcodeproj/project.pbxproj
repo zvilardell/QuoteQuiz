@@ -18,7 +18,6 @@
 		B696A141233413A900F2DE24 /* ResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B696A13F233413A900F2DE24 /* ResultsViewController.xib */; };
 		B696A1442334508700F2DE24 /* UINavigationController+popRightToLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = B696A1432334508700F2DE24 /* UINavigationController+popRightToLeft.swift */; };
 		B696A146233AB45800F2DE24 /* UIImageView+setTintColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B696A145233AB45800F2DE24 /* UIImageView+setTintColor.swift */; };
-		B6D615772319CF9800813038 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6F4C8F222F1059300A0B1B8 /* Alamofire.framework */; };
 		B6D615792319CF9B00813038 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6D615782319CF9B00813038 /* Realm.framework */; };
 		B6D6157B2319CF9E00813038 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6D6157A2319CF9E00813038 /* RealmSwift.framework */; };
 		B6D6157D2319D1DB00813038 /* UIViewController+utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D6157C2319D1DB00813038 /* UIViewController+utilities.swift */; };
@@ -75,7 +74,6 @@
 		B6F4C8DF22F0E90A00A0B1B8 /* QuoteQuizUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteQuizUITests.swift; sourceTree = "<group>"; };
 		B6F4C8E122F0E90A00A0B1B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6F4C8EF22F0F1ED00A0B1B8 /* HttpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpService.swift; sourceTree = "<group>"; };
-		B6F4C8F222F1059300A0B1B8 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		B6F4C8F522F123CA00A0B1B8 /* ResponseModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModels.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,7 +82,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B6D615772319CF9800813038 /* Alamofire.framework in Frameworks */,
 				B6D615792319CF9B00813038 /* Realm.framework in Frameworks */,
 				B6D6157B2319CF9E00813038 /* RealmSwift.framework in Frameworks */,
 			);
@@ -240,7 +237,6 @@
 			children = (
 				B6D6157A2319CF9E00813038 /* RealmSwift.framework */,
 				B6D615782319CF9B00813038 /* Realm.framework */,
-				B6F4C8F222F1059300A0B1B8 /* Alamofire.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -383,7 +379,6 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
 			);

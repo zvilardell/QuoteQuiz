@@ -5,15 +5,15 @@
 //  Created by Zach Vilardell on 7/30/19.
 //  Copyright © 2019 zvilardell. All rights reserved.
 //
-
 import Foundation
-import Alamofire
 
 class HttpService {
     
     private let kanyeEndpoint = "https://api.kanye.rest"
     private let breakingBadEndpoint = "https://breaking-bad-quotes.herokuapp.com/v1/quotes"
     private let ronSwansonEndpoint = "https://ron-swanson-quotes.herokuapp.com/v2/quotes"
+    
+    private let session = URLSession(configuration: .default)
     
     static let shared = HttpService()
     private init() {}
@@ -43,9 +43,16 @@ class HttpService {
     }
     
     private func get(_ endpoint: String, completion: @escaping (Data)->()) {
-        Alamofire.request(endpoint, method: .get).responseData { response in
-            guard let responseData = response.data else { return }
+        guard let url = URL(string: endpoint) else { return }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        
+        let task = session.dataTask(with: request) { (data, response, error) in
+            guard let responseData = data else { return }
             completion(responseData)
         }
+        
+        task.resume()
     }
 }
