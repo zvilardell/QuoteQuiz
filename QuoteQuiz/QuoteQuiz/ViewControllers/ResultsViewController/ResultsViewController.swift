@@ -21,8 +21,9 @@ class ResultsViewController: UIViewController {
     private let selectedSource: QuoteSource
     private var notificationToken: RLMNotificationToken?
     
-    private let favoritedImage: UIImage? = UIImage(named: "FavoritedHeart")
-    private let notFavoritedImage: UIImage? = UIImage(named: "UnfavoritedHeart")
+    private let favoritedImage: UIImage? = UIImage(systemName: "suit.heart.fill")
+    private let notFavoritedImage: UIImage? = UIImage(systemName: "suit.heart")
+    private let nextArrowImage: UIImage? = UIImage(systemName: "arrow.right")
     
     init(quote: Quote?, selectedSource: QuoteSource, delegate: GameButtonsDelegate?) {
         self.quote = quote
@@ -42,17 +43,15 @@ class ResultsViewController: UIViewController {
     }
     
     private func setupView() {
-        guard let quote = self.quote,
-              let arrowImage = UIImage(named: "NextArrow")
-              else { return }
+        guard let arrowImage = nextArrowImage else { return }
         
         arrowImageView.setImage(arrowImage, withTintColor: .white)
         observeQuote()
     }
     
     private func observeQuote() {
-        guard let realm = try? Realm(),
-              let quote = self.quote else { return }
+        guard let realm = try? Realm(), let quote = self.quote else { return }
+        
         //cannot observe unmanaged single objects
         //observe results collection instead, initially empty if quote has not been saved
         let results = realm.objects(Quote.self).filter("text == %@", quote.text)
@@ -90,9 +89,8 @@ class ResultsViewController: UIViewController {
     }
     
     @IBAction func favoriteButtonTapped(_ sender: Any) {
-        guard let quote = quote,
-              let newHeartImage = !quote.existsInRealm() ? UIImage(named: "FavoritedHeart") : UIImage(named: "UnfavoritedHeart")
-              else { return }
+        guard let quote = quote else { return }
+        
         if !quote.existsInRealm() {
             quote.saveToRealm()
         } else {
