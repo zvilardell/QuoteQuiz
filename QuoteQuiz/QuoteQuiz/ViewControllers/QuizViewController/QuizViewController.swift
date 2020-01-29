@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 protocol GameButtonsDelegate: class {
     func answerSelected(withSource source: QuoteSource)
@@ -43,9 +44,8 @@ class QuizViewController: UIViewController {
         super.viewDidAppear(animated)
         
         //add game buttons as a child view controller
-        let controlsNavigationController = UINavigationController(rootViewController: gameButtonsViewController)
-        controlsNavigationController.navigationBar.isHidden = true
-        addChildViewController(controlsNavigationController, withFrame: gameButtonsView.frame)
+        let gameButtons = UIHostingController(rootView: GameButtonsView())
+        addChildViewController(gameButtons, withFrame: gameButtonsView.frame)
     }
     
     private func setupView() {
