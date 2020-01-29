@@ -17,13 +17,18 @@ struct GameButtonsView: View {
             
             //buttons
             VStack {
-                Text("Hello world")
+                Button(action: {
+                    print("Hey")
+                }) {
+                    Text("Yo")
+                }
             }
         }
     }
 }
 
-//struct GameButton: Button {
+//struct GameButton: View {
+//    
 //    var body: some View {
 //
 //    }
