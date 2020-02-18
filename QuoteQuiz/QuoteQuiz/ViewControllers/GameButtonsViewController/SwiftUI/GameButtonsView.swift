@@ -17,21 +17,27 @@ struct GameButtonsView: View {
             
             //buttons
             VStack {
-                GameButton()
-                GameButton()
-                GameButton()
+                GameButton(title: "Breaking Bad")
+                GameButton(title: "Ron Swanson")
+                GameButton(title: "Kanye West")
             }
         }
     }
 }
 
 struct GameButton: View {
+    
+    let title: String
+    
+    init(title: String) {
+        self.title = title
+    }
 
     var body: some View {
         Button(action: {
             print("Hey")
         }) {
-            Text("Yo")
+            Text(title)
                 .font(Font.system(size: 15))
                 .foregroundColor(Color.white)
         }
