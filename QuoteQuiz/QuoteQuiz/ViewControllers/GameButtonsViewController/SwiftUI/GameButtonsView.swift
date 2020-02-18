@@ -32,15 +32,13 @@ struct GameButton: View {
             print("Hey")
         }) {
             Text("Yo")
+                .font(Font.system(size: 15))
                 .foregroundColor(Color.white)
         }
         .frame(minWidth: 0.0, maxWidth: .infinity, maxHeight: 55.0)
         .background(Color(red: 170 / 255, green: 86 / 255, blue: 38 / 255))
         .cornerRadius(5)
-        .padding()
-        
-        
-            
+        .padding([.vertical])
     }
 }
 
