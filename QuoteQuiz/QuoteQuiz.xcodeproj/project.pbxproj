@@ -11,6 +11,7 @@
 		B652340022F1FD900047D18B /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65233FE22F1FD900047D18B /* QuizViewController.swift */; };
 		B652340122F1FD900047D18B /* QuizViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B65233FF22F1FD900047D18B /* QuizViewController.xib */; };
 		B652340722F2138D0047D18B /* RandomQuoteGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B652340622F2138D0047D18B /* RandomQuoteGenerator.swift */; };
+		B671566C23FC88D600F73CD1 /* ResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B671566B23FC88D600F73CD1 /* ResultsView.swift */; };
 		B677853123CE7E1200FDCC54 /* GameButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B677853023CE7E1200FDCC54 /* GameButtonsView.swift */; };
 		B696A1372332FBE500F2DE24 /* GameButtonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B696A1352332FBE500F2DE24 /* GameButtonsViewController.swift */; };
 		B696A1382332FBE500F2DE24 /* GameButtonsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B696A1362332FBE500F2DE24 /* GameButtonsViewController.xib */; };
@@ -53,6 +54,7 @@
 		B65233FE22F1FD900047D18B /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		B65233FF22F1FD900047D18B /* QuizViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuizViewController.xib; sourceTree = "<group>"; };
 		B652340622F2138D0047D18B /* RandomQuoteGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomQuoteGenerator.swift; sourceTree = "<group>"; };
+		B671566B23FC88D600F73CD1 /* ResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsView.swift; sourceTree = "<group>"; };
 		B677853023CE7E1200FDCC54 /* GameButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameButtonsView.swift; sourceTree = "<group>"; };
 		B696A1352332FBE500F2DE24 /* GameButtonsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameButtonsViewController.swift; sourceTree = "<group>"; };
 		B696A1362332FBE500F2DE24 /* GameButtonsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameButtonsViewController.xib; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				B677853023CE7E1200FDCC54 /* GameButtonsView.swift */,
+				B671566B23FC88D600F73CD1 /* ResultsView.swift */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";
@@ -419,6 +422,7 @@
 				B6F4C8C022F0E90900A0B1B8 /* AppDelegate.swift in Sources */,
 				B6D6157D2319D1DB00813038 /* UIViewController+utilities.swift in Sources */,
 				B6F4C8F622F123CA00A0B1B8 /* ResponseModels.swift in Sources */,
+				B671566C23FC88D600F73CD1 /* ResultsView.swift in Sources */,
 				B696A146233AB45800F2DE24 /* UIImageView+setTintColor.swift in Sources */,
 				B6F4C8F022F0F1ED00A0B1B8 /* HttpService.swift in Sources */,
 			);
