@@ -71,6 +71,7 @@ class QuizViewController: UIViewController {
     }
 }
 
+// MARK: - GameButtonsDelegate
 extension QuizViewController: GameButtonsDelegate {
     
     func answerSelected(withSource source: QuoteSource) {

@@ -21,23 +21,22 @@ struct GameButtonsView: View {
                 //buttons
                 VStack {
                     GameButton(title: "Breaking Bad")
+                    Spacer()
                     GameButton(title: "Ron Swanson")
+                    Spacer()
                     GameButton(title: "Kanye West")
                 }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
+            .navigationBarTitle("") // can't hide the nav bar without this, SwiftUI bug
+            .navigationBarHidden(true)
         }
-        .navigationBarHidden(true)
-        .navigationBarBackButtonHidden(true)
     }
 }
 
 struct GameButton: View {
     
     let title: String
-    
-    init(title: String) {
-        self.title = title
-    }
 
     var body: some View {
         //navigation link only working once in preview/simulator due to Xcode bug
@@ -48,7 +47,6 @@ struct GameButton: View {
             .frame(minWidth: 0.0, maxWidth: .infinity, minHeight: 55.0, maxHeight: 55.0)
             .background(Color(red: 170 / 255, green: 86 / 255, blue: 38 / 255))
             .cornerRadius(5)
-            .padding([.vertical])
         }
     }
 }
