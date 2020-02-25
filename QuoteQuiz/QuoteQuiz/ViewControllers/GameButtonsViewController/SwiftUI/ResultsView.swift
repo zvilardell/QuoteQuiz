@@ -17,13 +17,21 @@ enum ImageName: String {
 struct ResultsView: View {
     
     var body: some View {
-        VStack {
-            Text("Hello")
-            Spacer()
-            HStack {
-                ResultsButton(imageName: .notFavorited, color: Color(red: 255 / 255, green: 111 / 255, blue: 108 / 255))
-                Divider()
-                ResultsButton(imageName: .nextArrow, color: Color(red: 174 / 255, green: 255 / 255, blue: 157 / 255))
+        ZStack {
+            //set background color
+            Color.black
+            .edgesIgnoringSafeArea(.all)
+            
+            //results view
+            VStack {
+                Text("Hello")
+                    .foregroundColor(.white)
+                Spacer()
+                HStack {
+                    ResultsButton(imageName: .notFavorited, color: Color(red: 255 / 255, green: 111 / 255, blue: 108 / 255))
+                    Divider()
+                    ResultsButton(imageName: .nextArrow, color: Color(red: 174 / 255, green: 255 / 255, blue: 157 / 255))
+                }
             }
         }
     }
@@ -42,9 +50,9 @@ struct ResultsButton: View {
             self.presentationMode.wrappedValue.dismiss()
         }) {
             Image(systemName: imageName.rawValue)
-                .foregroundColor(Color.white)
                 .frame(minWidth: 0.0, maxWidth: .infinity, minHeight: 0.0, maxHeight: .infinity)
                 .aspectRatio(1.0, contentMode: .fit)
+                .foregroundColor(.white)
         }
         .background(color)
         .cornerRadius(5)
