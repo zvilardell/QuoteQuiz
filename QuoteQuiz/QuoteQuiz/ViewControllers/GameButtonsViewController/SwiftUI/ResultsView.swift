@@ -39,13 +39,13 @@ struct ResultsButton: View {
     var body: some View {
         //navigation link only working once in preview/simulator due to Xcode bug
         Button(action: {
-            print("zzz hello")
             self.presentationMode.wrappedValue.dismiss()
         }) {
             Image(systemName: imageName.rawValue)
                 .foregroundColor(Color.white)
+                .frame(minWidth: 0.0, maxWidth: .infinity, minHeight: 0.0, maxHeight: .infinity)
+                .aspectRatio(1.0, contentMode: .fit)
         }
-        .frame(minWidth: 0.0, maxWidth: .infinity, minHeight: 200.0, maxHeight: 200.0)
         .background(color)
         .cornerRadius(5)
     }
