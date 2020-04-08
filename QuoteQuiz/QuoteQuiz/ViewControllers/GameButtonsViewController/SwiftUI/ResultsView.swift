@@ -34,6 +34,8 @@ struct ResultsView: View {
                 }
             }
         }
+        .navigationBarTitle("")
+        .navigationBarHidden(true)
     }
 }
 
@@ -45,7 +47,6 @@ struct ResultsButton: View {
     @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
-        //navigation link only working once in preview/simulator due to Xcode bug
         Button(action: {
             self.presentationMode.wrappedValue.dismiss()
         }) {
