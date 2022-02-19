@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B642C48E27C0864000C44F34 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = B642C48D27C0864000C44F34 /* Realm */; };
+		B642C49027C0864000C44F34 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B642C48F27C0864000C44F34 /* RealmSwift */; };
 		B65233FD22F12C160047D18B /* UITextView+setQuoteText.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65233FC22F12C160047D18B /* UITextView+setQuoteText.swift */; };
 		B652340022F1FD900047D18B /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65233FE22F1FD900047D18B /* QuizViewController.swift */; };
 		B652340122F1FD900047D18B /* QuizViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B65233FF22F1FD900047D18B /* QuizViewController.xib */; };
@@ -20,8 +22,6 @@
 		B696A141233413A900F2DE24 /* ResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B696A13F233413A900F2DE24 /* ResultsViewController.xib */; };
 		B696A1442334508700F2DE24 /* UINavigationController+popRightToLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = B696A1432334508700F2DE24 /* UINavigationController+popRightToLeft.swift */; };
 		B696A146233AB45800F2DE24 /* UIImageView+setTintColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B696A145233AB45800F2DE24 /* UIImageView+setTintColor.swift */; };
-		B6D615792319CF9B00813038 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6D615782319CF9B00813038 /* Realm.framework */; };
-		B6D6157B2319CF9E00813038 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6D6157A2319CF9E00813038 /* RealmSwift.framework */; };
 		B6D6157D2319D1DB00813038 /* UIViewController+utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D6157C2319D1DB00813038 /* UIViewController+utilities.swift */; };
 		B6F4C8C022F0E90900A0B1B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F4C8BF22F0E90900A0B1B8 /* AppDelegate.swift */; };
 		B6F4C8C722F0E90A00A0B1B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6F4C8C622F0E90A00A0B1B8 /* Assets.xcassets */; };
@@ -63,8 +63,6 @@
 		B696A13F233413A900F2DE24 /* ResultsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultsViewController.xib; sourceTree = "<group>"; };
 		B696A1432334508700F2DE24 /* UINavigationController+popRightToLeft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+popRightToLeft.swift"; sourceTree = "<group>"; };
 		B696A145233AB45800F2DE24 /* UIImageView+setTintColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+setTintColor.swift"; sourceTree = "<group>"; };
-		B6D615782319CF9B00813038 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
-		B6D6157A2319CF9E00813038 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		B6D6157C2319D1DB00813038 /* UIViewController+utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+utilities.swift"; sourceTree = "<group>"; };
 		B6F4C8BC22F0E90900A0B1B8 /* QuoteQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuoteQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6F4C8BF22F0E90900A0B1B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -86,8 +84,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B6D615792319CF9B00813038 /* Realm.framework in Frameworks */,
-				B6D6157B2319CF9E00813038 /* RealmSwift.framework in Frameworks */,
+				B642C49027C0864000C44F34 /* RealmSwift in Frameworks */,
+				B642C48E27C0864000C44F34 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,8 +247,6 @@
 		B6F4C8F122F1059300A0B1B8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B6D6157A2319CF9E00813038 /* RealmSwift.framework */,
-				B6D615782319CF9B00813038 /* Realm.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -265,13 +261,16 @@
 				B6F4C8B822F0E90900A0B1B8 /* Sources */,
 				B6F4C8B922F0E90900A0B1B8 /* Frameworks */,
 				B6F4C8BA22F0E90900A0B1B8 /* Resources */,
-				B6F4C8F422F1060700A0B1B8 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = QuoteQuiz;
+			packageProductDependencies = (
+				B642C48D27C0864000C44F34 /* Realm */,
+				B642C48F27C0864000C44F34 /* RealmSwift */,
+			);
 			productName = QuoteQuiz;
 			productReference = B6F4C8BC22F0E90900A0B1B8 /* QuoteQuiz.app */;
 			productType = "com.apple.product-type.application";
@@ -319,7 +318,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1030;
-				LastUpgradeCheck = 1030;
+				LastUpgradeCheck = 1320;
 				ORGANIZATIONNAME = zvilardell;
 				TargetAttributes = {
 					B6F4C8BB22F0E90900A0B1B8 = {
@@ -344,6 +343,9 @@
 				Base,
 			);
 			mainGroup = B6F4C8B322F0E90900A0B1B8;
+			packageReferences = (
+				B642C48C27C0864000C44F34 /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = B6F4C8BD22F0E90900A0B1B8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -383,28 +385,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		B6F4C8F422F1060700A0B1B8 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B6F4C8B822F0E90900A0B1B8 /* Sources */ = {
@@ -497,6 +477,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -558,6 +539,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -759,6 +741,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B642C48C27C0864000C44F34 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 10.22.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B642C48D27C0864000C44F34 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B642C48C27C0864000C44F34 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		B642C48F27C0864000C44F34 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B642C48C27C0864000C44F34 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B6F4C8B422F0E90900A0B1B8 /* Project object */;
 }
