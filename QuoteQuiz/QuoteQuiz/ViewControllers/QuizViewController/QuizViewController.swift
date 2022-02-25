@@ -8,8 +8,9 @@
 
 import UIKit
 import SwiftUI
+import Combine
 
-protocol GameButtonsDelegate: class {
+protocol GameButtonsDelegate: AnyObject {
     func answerSelected(withSource source: QuoteSource)
     func showNextQuote()
 }
@@ -22,6 +23,7 @@ class QuizViewController: UIViewController {
     @IBOutlet weak var quoteSourceLabel: UILabel!
     
     private let quoteGenerator: RandomQuoteGenerator
+    private var cancellable: AnyCancellable?
     private var currentQuote: Quote?
     private lazy var gameButtonsViewController: GameButtonsViewController = GameButtonsViewController(delegate: self)
     
@@ -48,6 +50,10 @@ class QuizViewController: UIViewController {
         addChildViewController(gameButtons, withFrame: gameButtonsView.frame)
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        getQuote()
+    }
+    
     private func setupView() {
         title = "QuoteQuiz"
         quoteTextView.textContainerInset = .zero
@@ -60,14 +66,21 @@ class QuizViewController: UIViewController {
     }
     
     private func getQuote() {
-        quoteGenerator.generateQuote { [unowned self] quote in
-            DispatchQueue.main.async {
-                self.quoteSourceLabel.isHidden = true
-                self.currentQuote = quote
-                self.gameButtonsViewController.setQuote(quote)
-                self.quoteTextView.setQuoteText(quote.text, heightToAdjust: self.quoteTextViewHeightContraint)
+        cancellable = quoteGenerator.generateQuote()
+            .sink {
+                print("Completion: \($0)")
+            } receiveValue: { [unowned self] quote in
+                guard let quote = quote else { return }
+                
+                print("Value: \(String(describing: quote))")
+                
+                DispatchQueue.main.async {
+                    self.quoteSourceLabel.isHidden = true
+                    self.currentQuote = quote
+                    self.gameButtonsViewController.setQuote(quote)
+                    self.quoteTextView.setQuoteText(quote.text, heightToAdjust: self.quoteTextViewHeightContraint)
+                }
             }
-        }
     }
 }
 

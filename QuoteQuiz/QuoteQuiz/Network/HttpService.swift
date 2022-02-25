@@ -19,31 +19,36 @@ class HttpService {
     static let shared = HttpService()
     private init() {}
     
-    func getKanyeQuote() -> AnyPublisher<Data, Error> {
+    func getKanyeQuote() -> AnyPublisher<Quote?, Error> {
         return get(kanyeEndpoint)
-//        { data in
-//            guard let kanyeResponse = try? JSONDecoder().decode(KanyeResponse.self, from: data) else { return }
-//            let quote = Quote(text: kanyeResponse.quote, quoteSource: .kanyeWest)
-//            completion(quote)
-//        }
+            .decode(type: KanyeResponse.self, decoder: JSONDecoder())
+            .tryMap { kanyeResponse in
+                let quote = Quote(text: kanyeResponse.quote, quoteSource: .kanyeWest)
+                return quote
+            }
+            .eraseToAnyPublisher()
     }
     
-    func getBreakingBadQuote() -> AnyPublisher<Data, Error> {
+    func getBreakingBadQuote() -> AnyPublisher<Quote?, Error> {
         return get(breakingBadEndpoint)
-//        { data in
-//            guard let arrayResponse = try? JSONDecoder().decode(Array<BreakingBadResponse>.self, from: data), let bbResponse = arrayResponse.first else { return }
-//            let quote = Quote(text: bbResponse.quote, author: bbResponse.author, quoteSource: .breakingBad)
-//            completion(quote)
-//        }
+            .decode(type: Array<BreakingBadResponse>.self, decoder: JSONDecoder())
+            .tryMap { arrayResponse in
+                guard let bbResponse = arrayResponse.first else { return nil }
+                let quote = Quote(text: bbResponse.quote, author: bbResponse.author, quoteSource: .breakingBad)
+                return quote
+            }
+            .eraseToAnyPublisher()
     }
     
-    func getRonSwansonQuote() -> AnyPublisher<Data, Error> {
+    func getRonSwansonQuote() -> AnyPublisher<Quote?, Error> {
         return get(ronSwansonEndpoint)
-//        { data in
-//            guard let arrayResponse = try? JSONDecoder().decode(Array<String>.self, from: data), let ronQuote = arrayResponse.first else { return }
-//            let quote = Quote(text: ronQuote, quoteSource: .ronSwanson)
-//            completion(quote)
-//        }
+            .decode(type: Array<String>.self, decoder: JSONDecoder())
+            .tryMap { arrayResponse in
+                guard let ronQuote = arrayResponse.first else { return nil }
+                let quote = Quote(text: ronQuote, quoteSource: .ronSwanson)
+                return quote
+            }
+            .eraseToAnyPublisher()
     }
     
     private func get(_ endpoint: String) -> AnyPublisher<Data, Error>  {
@@ -60,12 +65,5 @@ class HttpService {
                 return data
             }
             .eraseToAnyPublisher()
-        
-//        let task = session.dataTask(with: request) { (data, response, error) in
-//            guard let responseData = data else { return }
-//            completion(responseData)
-//        }
-//
-//        task.resume()
     }
 }
